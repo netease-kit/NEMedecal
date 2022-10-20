@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_sufferer_avatar"
+        android:layout_width="@dimen/dp_42"
+        android:layout_height="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_20"
+        tools:src="@drawable/avatar_doctor_one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        tools:text="李雪琴"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/iv_sufferer_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_sufferer_avatar" />
+
+    <ImageView
+        android:id="@+id/iv_star_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/star"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toRightOf="@+id/tv_doctor_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_doctor_name" />
+
+    <ImageView
+        android:id="@+id/iv_star_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/star"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toRightOf="@+id/iv_star_one"
+        app:layout_constraintTop_toTopOf="@+id/tv_doctor_name" />
+
+    <ImageView
+        android:id="@+id/iv_star_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/star"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toRightOf="@+id/iv_star_two"
+        app:layout_constraintTop_toTopOf="@+id/tv_doctor_name" />
+
+    <ImageView
+        android:id="@+id/iv_star_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/star"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toRightOf="@+id/iv_star_three"
+        app:layout_constraintTop_toTopOf="@+id/tv_doctor_name" />
+
+    <ImageView
+        android:id="@+id/iv_star_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/star"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toRightOf="@+id/iv_star_four"
+        app:layout_constraintTop_toTopOf="@+id/tv_doctor_name" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        tools:text="2022.05.21"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toRightOf="@+id/iv_sufferer_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_sufferer_avatar" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        tools:text="擅长：慢性咳嗽、气喘、长期发热不退及不明原因的肺部阴影等疑难杂症的诊断与治疗颇有研究。采用全麻下全肺灌洗诊断并治疗肺蛋白沉着症技术处于国内领先水平。"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_sufferer_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/iv_sufferer_avatar"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

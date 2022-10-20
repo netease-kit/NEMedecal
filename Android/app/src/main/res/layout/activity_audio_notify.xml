@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/et_notify_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_32"
+        android:hint="@string/medical_audio_notify_mobile_tip"
+        android:inputType="number"
+        android:textSize="@dimen/text_size_16"
+        android:textColorHint="@color/color_B0B6BE"
+        android:background="@null"
+        android:maxLength="11"
+        android:textColor="@color/color_333333"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_33D1C6"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        />
+
+    <EditText
+        android:id="@+id/et_notify_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_20"
+        android:hint="@string/medical_audio_notify_content_tip"
+        android:textSize="@dimen/text_size_16"
+        android:textColorHint="@color/color_B0B6BE"
+        android:textColor="@color/color_333333"
+        android:background="@null"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_33D1C6"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_12"
+        android:textSize="@dimen/text_size_12"
+        android:textColor="@color/color_B0B6BE"
+        android:text="@string/medical_audio_notify_desc"
+        />
+
+    <TextView
+        android:id="@+id/tv_send_audio"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_30"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:gravity="center"
+        android:text="@string/medical_audio_notify_send_message"
+        android:textSize="@dimen/text_size_16"
+        android:background="@drawable/bg_gray37_round"
+        />
+
+
+</LinearLayout>

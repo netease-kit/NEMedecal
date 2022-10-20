@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2022 NetEase, Inc. All rights reserved. -->
+<!-- Use of this source code is governed by a MIT license that can be -->
+<!-- found in the LICENSE file. -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_00000000">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_270"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="@dimen/dp_20"
+        android:background="@drawable/shape_dialog_choice_bg">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tv_dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_dialog_title"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/tv_dialog_negative"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_below="@+id/line_bottom"
+            android:layout_alignEnd="@id/line_divide"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/medical_cancel"/>
+
+        <TextView
+            android:id="@+id/tv_dialog_positive"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_below="@+id/line_bottom"
+            android:layout_alignStart="@id/line_divide"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textColor="@color/color_ff007aff"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/medical_sure"/>
+
+        <View
+            android:id="@+id/line_divide"
+            android:layout_width="0.5dp"
+            android:layout_height="@dimen/dp_46"
+            android:layout_below="@id/line_bottom"
+            android:layout_centerHorizontal="true"
+            android:background="@color/color_0c000050" />
+
+        <View
+            android:id="@+id/line_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/tv_dialog_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/color_0c000050" />
+    </RelativeLayout>
+
+</RelativeLayout>

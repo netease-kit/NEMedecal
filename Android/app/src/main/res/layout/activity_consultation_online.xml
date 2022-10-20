@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_EFF1F4"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_36"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_16"
+        >
+
+        <TextView
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="match_parent"
+            android:text="@string/medical_department_all"
+            android:gravity="center"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/text_size_14"
+            android:background="@drawable/select_left_department"
+            />
+
+        <TextView
+            android:id="@+id/tv_department_middle"
+            android:layout_width="@dimen/dp_86"
+            android:layout_height="match_parent"
+            android:text="@string/medical_department_middle"
+            android:gravity="center"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/text_size_14"
+            android:background="@drawable/bg_middle"
+            />
+        <TextView
+            android:id="@+id/tv_department_right"
+            android:layout_width="@dimen/dp_74"
+            android:layout_height="match_parent"
+            android:text="@string/medical_department_right"
+            android:gravity="center"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/text_size_14"
+            android:background="@drawable/bg_right_round"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:text="@string/medical_expert"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_16"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_doctor_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        />
+
+</LinearLayout>
