@@ -48,3 +48,6 @@ model | 数据模型
 manager | 业务逻辑相关管理类
 ui | 页面
 utils | 工具类
+
+## 参考文档
+https://doc.yunxin.163.com/online-clinic/docs/home-page?platform=android
