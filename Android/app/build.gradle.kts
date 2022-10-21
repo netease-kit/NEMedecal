@@ -59,24 +59,22 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
     implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.netease.yunxin.kit:alog:1.0.8")
-    implementation("com.netease.yunxin.kit:call-pstn:1.6.4")
+
+    implementation("com.google.android.material:material:1.5.0")
     implementation("com.gyf.immersionbar:immersionbar:3.0.0")
-    implementation("com.netease.yunxin.kit.auth:auth-yunxin-login:1.0.4-beta01")
+
     implementation("com.squareup.okhttp3:okhttp:4.7.3")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    implementation("com.netease.yunxin.kit:alog:1.0.8")
+    implementation("com.netease.yunxin.kit.auth:auth-yunxin-login:1.0.4-beta01")
+    implementation("com.netease.yunxin.kit:call-pstn:1.6.4")
     implementation("com.netease.yunxin.kit.common:common-network:1.1.6")
     implementation("com.netease.yunxin.kit.common:common-image:1.1.6")
     implementation("com.netease.yunxin.kit.common:common-ui:1.1.9-beta01")
     implementation("com.netease.yunxin.kit.common:common:1.1.9-beta01")
-    implementation("com.netease.yunxin.kit.chat:chatkit-ui:9.2.10-beta02")
-    implementation("com.netease.yunxin.kit.conversation:conversationkit-ui:9.2.10-beta01")
-    implementation ("com.tencent.bugly:crashreport:latest.release")
-
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation("com.netease.yunxin.kit.chat:chatkit-ui:9.2.10-rc01")
+    implementation("com.netease.yunxin.kit.conversation:conversationkit-ui:9.2.10-rc01")
 }

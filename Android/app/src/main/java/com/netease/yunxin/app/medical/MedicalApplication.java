@@ -22,7 +22,6 @@ import com.netease.yunxin.kit.login.model.EventType;
 import com.netease.yunxin.kit.login.model.LoginEvent;
 import com.netease.yunxin.kit.login.model.LoginObserver;
 import com.netease.yunxin.kit.login.model.LoginType;
-import com.tencent.bugly.crashreport.CrashReport;
 import java.util.HashMap;
 
 public class MedicalApplication extends Application {
@@ -36,7 +35,6 @@ public class MedicalApplication extends Application {
     initCommon();
     initLogin();
     registerLoginObserver();
-    CrashReport.initCrashReport(getApplicationContext(), "0e925d67d3", true);
   }
 
   public static Application getApplication() {
