@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_doctor_item"
+    android:paddingRight="@dimen/dp_16"
+    android:paddingStart="@dimen/dp_16"
+    android:paddingTop="@dimen/dp_24"
+    android:paddingBottom="@dimen/dp_24"
+    >
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/dp_42"
+        android:layout_height="@dimen/dp_42"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/avatar_doctor_one"
+        />
+
+    <TextView
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="李雪琴"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dp_10"
+        />
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="主任医师"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toRightOf="@+id/tv_doctor_name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dp_10"
+        />
+
+    <TextView
+        android:id="@+id/tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="浙江大学第一医生  呼吸内科"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_doctor_name"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        />
+
+    <TextView
+        android:id="@+id/tv_sufferer_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="近7日接诊  98  好评率98%"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        />
+
+    <TextView
+        android:id="@+id/tv_good_at"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
+        tools:text="擅长：呼吸道感染疾病，呼吸道感染疾病,呼吸道感染疾病,呼吸道感染疾病"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sufferer_count" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

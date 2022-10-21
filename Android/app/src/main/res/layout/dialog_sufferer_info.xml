@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/dp_50"
+    android:background="@drawable/bg_dialog_white_round"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:gravity="center_horizontal"
+        android:text="@string/medical_sufferer_info"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_17"/>
+
+    <TextView
+        android:paddingTop="@dimen/dp_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/medical_sufferer_base_info"
+        android:textColor="@color/color_666666"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_10"
+        android:text="@string/medical_call_sufferer_name"
+        android:textColor="@color/color_333333"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_grayed_round"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_8"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_12"
+            android:src="@drawable/icon_male"
+            />
+
+        <TextView
+            android:id="@+id/tv_sufferer_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/color_23C2B6"
+            android:layout_marginStart="@dimen/dp_2"
+            />
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_grayed_round"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="30岁"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/color_23C2B6"
+            android:layout_marginTop="@dimen/dp_8"
+            android:paddingHorizontal="@dimen/dp_4"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:paddingTop="@dimen/dp_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/medical_sufferer_illness"
+        android:textColor="@color/color_666666"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_12"
+        android:text="@string/medical_sufferer_illness_info"
+        android:textColor="@color/color_333333"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/info_one"
+            android:scaleType="fitStart"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/info_two"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/info_three"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_divider"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/medical_close"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_17"
+        android:layout_marginVertical="@dimen/dp_16"
+        android:textColor="@color/color_ff007aff"
+        />
+
+
+</LinearLayout>

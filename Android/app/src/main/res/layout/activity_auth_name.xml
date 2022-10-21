@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:text="@string/medical_auth_name"
+        android:textSize="@dimen/text_size_14"
+        android:textColor="@color/color_666666"
+        android:layout_marginTop="@dimen/dp_30"
+        />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_32"
+        android:hint="@string/medical_auth_name_tip"
+        android:textSize="@dimen/text_size_16"
+        android:textColorHint="@color/color_B0B6BE"
+        android:background="@null"
+        android:textColor="@color/color_333333"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_33D1C6"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_20"
+        android:hint="@string/medical_auth_name_id"
+        android:textSize="@dimen/text_size_16"
+        android:textColorHint="@color/color_B0B6BE"
+        android:textColor="@color/color_333333"
+        android:background="@null"
+        android:maxLength="19"
+        android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_33D1C6"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_12"
+        android:textSize="@dimen/text_size_12"
+        android:textColor="@color/color_B0B6BE"
+        android:text="@string/medical_auth_name_desc"
+        />
+
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_30"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:gravity="center"
+        android:text="@string/medical_commit"
+        android:textSize="@dimen/text_size_16"
+        android:background="@drawable/bg_gray37_round"
+        />
+
+
+</LinearLayout>

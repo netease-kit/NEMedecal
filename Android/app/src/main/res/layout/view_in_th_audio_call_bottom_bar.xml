@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_60"
+    android:background="@drawable/bg_bottom_call_bar"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_microphone"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_microphone" />
+
+    <ImageView
+        android:id="@+id/iv_hangup"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_call_small_phone" />
+</LinearLayout>
