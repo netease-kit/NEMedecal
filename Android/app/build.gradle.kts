@@ -69,12 +69,12 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
     implementation("com.netease.yunxin.kit:alog:1.0.8")
-    implementation("com.netease.yunxin.kit.auth:auth-yunxin-login:1.0.4-beta01")
+    implementation("com.netease.yunxin.kit.auth:auth-yunxin-login:1.0.4")
     implementation("com.netease.yunxin.kit:call-pstn:1.6.4")
     implementation("com.netease.yunxin.kit.common:common-network:1.1.6")
     implementation("com.netease.yunxin.kit.common:common-image:1.1.6")
-    implementation("com.netease.yunxin.kit.common:common-ui:1.1.9-beta01")
-    implementation("com.netease.yunxin.kit.common:common:1.1.9-beta01")
+    implementation("com.netease.yunxin.kit.common:common-ui:1.1.9")
+    implementation("com.netease.yunxin.kit.common:common:1.1.9")
     implementation("com.netease.yunxin.kit.chat:chatkit-ui:9.2.10-rc01")
     implementation("com.netease.yunxin.kit.conversation:conversationkit-ui:9.2.10-rc01")
 }
