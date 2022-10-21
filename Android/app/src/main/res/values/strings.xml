@@ -6,7 +6,7 @@
   -->
 
 <resources>
-    <string name="medical_app_name">医疗Demo</string>
+    <string name="medical_app_name">问诊Demo</string>
     <string name="medical_login_home_desc">互联网医疗场景 Demo</string>
     <string name="medical_verification_code">手机验证码登录</string>
     <string name="medical_login_tips">登录即视为您已同意 隐私政策 和 用户服务协议</string>

@@ -6,7 +6,7 @@ package com.netease.yunxin.app.medical.constant;
 
 /// 通用常量
 public class AppConstants {
-  public static final String APP_KEY = "05c8eb453b29de725ff44d9bd739563a";
+  public static final String APP_KEY = "your app key";
 
   public static final int PARENT_SCOPE = 6;
   public static final int SCOPE = 2;

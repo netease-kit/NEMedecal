@@ -47,11 +47,6 @@ android {
         }
     }
 
-    lint {
-        baseline = file("lint-baseline.xml")
-        abortOnError = false
-    }
-
     sourceSets["main"].jniLibs.srcDirs("libs")
 
 }
