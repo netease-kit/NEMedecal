@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 NetEase, Inc. All rights reserved.
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/dp_16"
+            >
+
+          <TextView
+              android:id="@+id/tv_keep_live_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/medical_keep_live_top"
+              android:textColor="@color/color_333333"
+              android:textSize="@dimen/text_size_14"
+              android:layout_marginTop="@dimen/dp_30"
+              />
+
+            <TextView
+                android:id="@+id/tv_keep_live_first"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/medical_keep_live_first"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_14"
+                android:layout_marginTop="@dimen/dp_12"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_keep_live_first_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/medical_keep_live_first_desc"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/text_size_14"
+                android:layout_marginTop="@dimen/dp_8"
+                />
+
+            <TextView
+                android:id="@+id/tv_keep_live_second"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/medical_keep_live_second"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_14"
+                android:layout_marginTop="@dimen/dp_12"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_keep_live_second_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/medical_keep_live_second_desc"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/text_size_14"
+                android:layout_marginTop="@dimen/dp_8"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_30"
+                android:src="@drawable/keep_live"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+</ScrollView>
