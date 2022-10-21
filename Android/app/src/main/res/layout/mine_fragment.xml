@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <ImageView
+        android:id="@+id/iv_mine_avatar"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_24"
+        android:src="@drawable/avatar_doctor_one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_change_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_change_role"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_mine_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_mine_avatar"
+        android:layout_marginEnd="@dimen/dp_32"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_mine_avatar"
+        app:layout_constraintLeft_toRightOf="@+id/iv_mine_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_mine_avatar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:id="@+id/tv_mine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="李雪琴"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_22" />
+
+            <TextView
+                android:id="@+id/tv_mine_suffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/medical_mine_suffer"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/text_size_16"
+                android:layout_marginStart="@dimen/dp_8"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_mine_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/medical_mine_department"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_sufferer_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grayed_round"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/dp_4">
+
+                <ImageView
+                    android:id="@+id/iv_sufferer_sex"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@drawable/icon_male" />
+
+                <TextView
+                    android:id="@+id/tv_sufferer_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:textColor="@color/color_23C2B6"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/medical_mine_male" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_sufferer_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:background="@drawable/bg_grayed_round"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/color_23C2B6"
+                android:text="@string/medical_mine_age"
+                android:paddingHorizontal="@dimen/dp_4"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_24"
+        android:background="@color/color_EFF1F4"
+        app:layout_constraintTop_toBottomOf="@+id/iv_mine_avatar" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <LinearLayout
+            android:id="@+id/ll_mine_sufferer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_mine_sufferer"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@drawable/icon_mine_sufferer" />
+
+            <TextView
+                android:id="@+id/tv_mine_sufferer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/medical_mine_sufferer"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:src="@drawable/icon_arrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F8FC" />
+
+        <LinearLayout
+            android:id="@+id/ll_mine_task"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_mine_task"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@drawable/icon_mine_task" />
+
+            <TextView
+                android:id="@+id/tv_mine_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/medical_mine_task"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:src="@drawable/icon_arrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F8FC" />
+
+        <LinearLayout
+            android:id="@+id/ll_mine_apply"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_mine_apply"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@drawable/icon_mine_apply" />
+
+            <TextView
+                android:id="@+id/tv_mine_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/medical_mine_apply"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:src="@drawable/icon_arrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F8FC" />
+
+        <LinearLayout
+            android:id="@+id/ll_mine_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_mine_setting"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@drawable/icon_mine_setting" />
+
+            <TextView
+                android:id="@+id/tv_mine_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/medical_mine_setting"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:src="@drawable/icon_arrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F8FC" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_30"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="@string/medical_logout"
+        android:background="@drawable/bg_setup_round"
+        app:layout_constraintTop_toBottomOf="@+id/ll_content"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:textSize="@dimen/text_size_16"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

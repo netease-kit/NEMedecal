@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_EFF1F4"
+    android:paddingHorizontal="@dimen/dp_16"
+    >
+
+    <TextView
+        android:id="@+id/tv_high_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/medical_high_on"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_24"
+        />
+
+    <ImageView
+        android:id="@+id/iv_audio_notify"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/select_experience"
+        android:src="@drawable/icon_audio_notify"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_high_on"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+    <ImageView
+        android:id="@+id/iv_keep_live"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/select_experience"
+        android:src="@drawable/icon_keep_live"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_high_on"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+    <ImageView
+        android:id="@+id/iv_phone_auth"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/select_experience"
+        android:src="@drawable/icon_phone_auth"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@+id/iv_audio_notify"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+    <TextView
+        android:id="@+id/tv_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_phone_auth"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="@string/medical_other"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/color_333333"
+        />
+
+    <ImageView
+        android:id="@+id/iv_real_name_auth"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/select_experience"
+        android:src="@drawable/icon_real_name"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_other"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+    <ImageView
+        android:id="@+id/iv_virtual_bg"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/select_experience"
+        android:src="@drawable/icon_virtual_bg"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_other"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
