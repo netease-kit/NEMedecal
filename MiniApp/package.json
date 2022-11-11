@@ -1,0 +1,24 @@
+{
+  "name": "medical-wx-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "compile": "tsc",
+    "ttsc": "ttsc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@xkit-yx/call-kit": "^1.7.2-beta.2008",
+    "@xkit-yx/call-kit-wx-ui": "^0.0.2",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.1.5",
+    "yunxin-log-debug": "^1.1.4"
+  },
+  "devDependencies": {
+    "@types/wechat-miniprogram": "^3.4.1",
+    "ttypescript": "^1.5.13",
+    "typescript": "^4.8.2",
+    "typescript-transform-paths": "^3.3.1"
+  },
+  "main": "/src/index"
+}

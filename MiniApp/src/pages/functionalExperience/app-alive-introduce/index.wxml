@@ -1,0 +1,14 @@
+<!--pages/functionalExperience/app-alive-introduce/index.wxml-->
+<view class="app-alive-page">
+  <view class="mb16">应用保活可在融合呼叫体验，特性介绍：</view>
+  <view>
+    <view class="app-alive-subtitle">1.锁屏保活</view>
+    <view>实现锁屏状态下应用高保活，保障应用音视频呼叫达到（备注：目前仅支持Android）</view>
+    <view class="app-alive-subtitle">2.适配1000+终端设备：</view>
+    <view>覆盖市面上大部分机型实现锁屏状态下应用高保活，保障应用音视频呼叫达到（备注：目前仅支持Android）</view>
+  </view>
+  <view class="tc">
+    <view class="app-alive-title bold">认证后</view>
+    <image class="app-alive-image" src="../../../resources/images/app-keep-live.png" mode="aspectFit"></image>
+  </view>
+</view>

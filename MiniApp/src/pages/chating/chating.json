@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "component-emoji": "../../components/emoji/emoji",
+    "input-modal": "../../components/inputmodal/inputmodal",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

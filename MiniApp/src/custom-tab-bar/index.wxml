@@ -1,0 +1,9 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <cover-view wx:if="{{unreadCount && item.pagePath === '/pages/tabbar/message/index'}}" class="msg-unread-count">{{unreadCount}}</cover-view>
+    <cover-image class="cover-image-item" src="{{(selected === index )? item.selectedIconPath : item.iconPath}}"></cover-image>
+    <cover-view class="cover-view-item" style="color: {{(selected === index )? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>

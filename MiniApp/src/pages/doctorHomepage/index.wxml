@@ -1,0 +1,49 @@
+<view class="gray-bg common-page">
+	<view class="basic-info">
+		<view class="info-top">
+			<image wx:if="{{doctorInfo.photo}}" class="photo" src="../../resources/images/{{doctorInfo.photo}}"/>
+			<view>
+				<text class="name">{{doctorInfo.name}}</text>
+				<text class="level">{{doctorInfo.level}}</text>
+				<view class="unit">{{doctorInfo.unit}}</view>
+			</view>
+		</view>
+		<view>{{doctorInfo.strongAt}}</view>
+	</view>
+	<view class="middle">
+		<view class="inquiry-card" data-type="message" bindtap="handleToDiagnose">
+			<view class="title">图文问诊</view>
+			<view class="price">¥ 10</view>
+		</view>
+		<view class="inquiry-card" data-type="audio" bindtap="handleToDiagnose">
+			<view class="title">语音问诊</view>
+			<view class="price">¥ 30</view>
+		</view>
+		<view class="inquiry-card" data-type="video" bindtap="handleToDiagnose">
+			<view class="title">视频问诊</view>
+			<view class="price">¥ 99</view>
+		</view>
+	</view>
+	<view class="evaluate-view">
+		<view class="evaluate-title">患者评价</view>
+		<block
+			wx:for="{{patientsEvaluation}}"
+			wx:key="id"
+			wx-index="index"
+		>
+			<view class="comment-block">
+				<view class="comment-top">
+					<image class="photo" src="../../resources/images/{{item.photo}}"/>
+					<view>
+						<view>
+							<text class="name">{{item.name}}</text>
+							<image class="comment-star" src="../../resources/images/stars_100.png"/>
+						</view>
+						<view class="date">{{item.comment_date}}</view>
+					</view>
+				</view>
+				<view>{{item.comment}}</view>
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/launch/index",
+    "pages/index/index",
+    "pages/diagnose/index",
+    "pages/tabbar/patient-index/index",
+    "pages/tabbar/doctor-index/index",
+    "pages/chating/chating",
+    "pages/tabbar/my/index",
+    "pages/tabbar/functions/index",
+    "pages/webview/index",
+    "custom-tab-bar/index",
+    "pages/selectRole/index",
+    "pages/inquiryOnline/index",
+    "pages/doctorHomepage/index",
+    "pages/setting/index",
+    "pages/tabbar/message/index",
+    "pages/functionalExperience/face-detect/index",
+    "pages/functionalExperience/ID-certification/index",
+    "pages/functionalExperience/voice-notice/index",
+    "pages/functionalExperience/app-alive-introduce/index",
+    "pages/functionalExperience/phone-certification-introduce/index",
+    "pages/call/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#37D6CA",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/doctor-index/index",
+        "text": "我的患者"
+      },
+      {
+        "pagePath": "pages/tabbar/patient-index/index",
+        "text": "问诊"
+      },
+      {
+        "pagePath": "pages/tabbar/message/index",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/tabbar/functions/index",
+        "text": "功能体验"
+      },
+      {
+        "pagePath": "pages/tabbar/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  }
+}

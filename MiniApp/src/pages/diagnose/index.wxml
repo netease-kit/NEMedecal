@@ -1,0 +1,47 @@
+<!--pages/diagnose/diagnose.wxml-->
+<view class="diagnose-page">
+  <view class="diagnose-header">
+    <text class="text-gray">当前角色：</text>
+    {{currentRole === 1 ? '医生' : '患者'}}
+  </view>
+  <!-- 呼叫记录 -->
+  <view class="diagnose-phone">
+    <view class="diagnose-phone-input">
+      <input
+        class="diagnose-phone__number"
+        type="number"
+        value="{{callNumber}}"
+        bindinput="handleMobileChange"
+        maxlength="11"
+        placeholder="输入已注册的手机号" />
+      <mp-icon wx:if="{{callNumber}}" catchtap="clearPhoneNumber" class="diagnose-phone-input__delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+    </view>
+    <view wx:if="{{showErrorTips}}" class="phone-error-text">请输入正确的手机号</view>
+    <view class="mt16" wx:if="{{callNumberHistory.length}}">
+      <text class="mr10">呼叫记录：</text>
+      <block wx:for="{{callNumberHistory}}" wx:for-item="item" wx:key="index">
+        <view data-number="{{item}}" bindtap="historyFillCallNumber" class="diagnose-phone__number-item">{{item}}
+          <mp-icon data-item="{{item}}" bindtap="clearHistoryItem" class="diagnose-phone__number-delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 通话配置 -->
+  <view class="diagnose-call">
+    <block wx:if="{{diagnoseType==='video'}}">
+      <!-- <view class="diagnose-call-switch-item">
+        <text>接通时开启虚拟背景</text>
+        <switch color="#337EFF" data-key="enableVirtualBg" checked="{{enableVirtualBg}}" bindchange="changeHandler"></switch>
+      </view> -->
+      <view class="diagnose-call-switch-item">
+        <text>接通时开启摄像头</text>
+        <switch size="small" color="#337EFF" data-key="enableCamera" checked="{{enableCamera}}" bindchange="changeHandler"></switch>
+      </view>
+    </block>
+    <view wx:if="{{diagnoseType !== 'message'}}" class="diagnose-call-switch-item">
+      <text>接通时开启麦克风</text>
+      <switch color="#337EFF" data-key="enableMic" checked="{{enableMic}}" bindchange="changeHandler"></switch>
+    </view>
+  </view>
+  <button class="diagnose-btn" bindtap="handleDiagnose">发起问诊</button>
+</view>

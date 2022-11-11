@@ -1,0 +1,103 @@
+<view class="necall-container">
+  <!-- 呼叫中的模糊背景 -->
+  <view wx:if="{{callStatus === 1 || callStatus === 2 || ((callStatus === 3 || callStatus === 4) && callType === '1')}}" class="necall-page-bg">
+    <view class="necall-bg-mask"></view>
+    <image src="{{roleAvatarImg}}" mode="aspectFit" class="necall-bg-image"></image>
+  </view>
+  <view wx:if="{{callStatus === 1}}" class="necall-invite-container">
+    <view class="necall-callee-info-warpper">
+      <image src="{{roleAvatarImg}}" class="necall-avatar" mode="aspectFill"></image>
+      <view>
+        <view class="necall-callee-nickname">{{userInfo.nick || userInfo.tel || '李某某'}}</view>
+        <view class="necall-callee-tips">正在链接对方...</view>
+      </view>
+      <!-- <image class="necall-callee-avatar" src="{{userInfo.avatar}}" /> -->
+    </view>
+    <view wx:if="{{callStatus === 1}}" class="necall-calling-btn-group">
+      <view class="necall-btn" bindtap="onHangup">
+        <image class="necall-img" src="{{hangupImg}}" />
+        <span>取消</span>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{callStatus === 2}}" class="necall-be-invited-container">
+    <view class="necall-callee-info-warpper">
+      <image src="{{roleAvatarImg}}" class="necall-avatar" mode="aspectFill"></image>
+      <view class="necall-caller-nickname">{{userInfo.nick || userInfo.tel || '李某某'}}</view>
+      <view wx:if="{{userInfo.role === 1}}" class="necall-callee-title">{{'呼吸内科主任'}}</view>
+      <view class="necall-caller-tips">{{callType === '1' ? '邀请你语音通话...' : '邀请你视频通话...'}}</view>
+    </view>
+    <view class="necall-called-btn-group">
+      <view class="necall-btn" bindtap="onHangup">
+        <image class="necall-img" src="{{hangupImg}}" />
+        <span>拒绝</span>
+      </view>
+      <view class="necall-btn" bindtap="onAccept">
+        <image class="necall-img" src="{{callType === '1' ? acceptImg.audio : acceptImg.video}}" />
+        <span>接听</span>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{callStatus === 3 || callStatus === 4}}" class="necall-in-call-container">
+    <view hidden="{{callType === '1'}}">
+      <view class="necall-in-call-duration">
+        <view class="necall-caller-nickname">{{userInfo.nick || userInfo.tel || '李某某'}}</view>
+        {{durationText}}
+      </view>
+      <view class="{{player.isFullScreen ? 'necall-large-view' : 'necall-small-view'}}" >
+        <live-player
+          style="{{player.videoMute ? 'height:0' : ''}}"
+          class="player"
+          id="player"
+          muted="{{player.videoMute}}"
+          src="{{player.url}}"
+          object-fit="{{player.objectFit}}"
+          mode="{{player.mode}}"
+          auto-pause-if-navigate="{{false}}"
+          auto-pause-if-open-native="{{false}}"
+          bindstatechange="_playerStateChange"
+          autoplay="{{player.autoplay}}" />
+        <image wx:if="{{player.url}}" class="icon-fullscreen" mode="aspectFill"
+          src="{{player.isFullScreen ? '../assets/icon-small.png' : '../assets/icon-large.png'}}"
+          bindtap="_toggleFullScreen" />
+        <view class="necall-player-video-mute-tips" hidden="{{!player.videoMute}}">对方关闭了摄像头</view>
+      </view>
+      <view class="{{pusher.isFullScreen ? 'necall-large-view' : 'necall-small-view'}}">
+        <live-pusher
+          style="{{pusher.enableCamera ? '' : 'height:0'}}"
+          class="pusher"
+          url="{{pusher.url}}"
+          mode="{{pusher.mode}}"
+          waiting-image="{{pusher.waitingImage}}"
+          autopush="{{pusher.autopush}}"
+          enable-camera="{{callType === '1' ? false : pusher.enableCamera}}"
+          enable-mic="{{pusher.enableMic}}"
+          muted="{{!pusher.enableMic}}"
+          binderror="_pusherErrorHandler" />
+          <image
+            class="icon-fullscreen"
+            mode="aspectFill"
+            wx:if="{{pusher.url}}"
+            src="{{pusher.isFullScreen ? '../assets/icon-small.png' : '../assets/icon-large.png'}}"
+            bindtap="_toggleFullScreen" />
+        <view class="necall-pusher-video-mute-tips" hidden="{{pusher.enableCamera}}">您关闭了摄像头</view>
+      </view>
+    </view>
+    <view class="necall-in-call-audio" wx:if="{{callType === '1'}}">
+      <!-- <image class="necall-in-call-avatar" src="{{roleAvatarImg}}" alt="" /> -->
+      <image src="{{roleAvatarImg}}" class="necall-avatar" mode="aspectFill"></image>
+      <view class="necall-caller-nickname">{{userInfo.nick || userInfo.tel || '李某某'}}</view>
+      <view wx:if="{{userInfo.role === 1}}" class="necall-callee-title">{{'呼吸内科主任'}}</view>
+      <view class="necall-in-call-title">{{callStatus === 4 ? '等待对方加入...' : '聊天中...'}}</view>
+      <view class="necall-in-call-tips" wx:if="{{callStatus === 3}}">{{durationText}}</view>
+    </view>
+    <view class="necall-in-call-btn-group">
+      <image class="necall-microphone-btn" src="{{pusher.enableMic ? microphoneImg.open : microphoneImg.close}}" bindtap="handleEnableLocalAudio" />
+      <image wx:if="{{callType === '2'}}" class="necall-video-btn" src="{{pusher.enableCamera ? videoImg.open : videoImg.close}}" bindtap="handleEnableLocalVideo" />
+      <image wx:if="{{callType === '2'}}" class="necall-video-btn" src="{{cameraRevertImg}}" bindtap="handleCameraRevert" />
+      <image wx:if="{{callType === '2'}}" class="necall-video-btn" src="{{virtualBgImg}}" bindtap="handleShowVirtualBg" />
+      <!-- <image class="necall-switch-btn" src="{{callType === '1' ? switchImg.video : switchImg.audio}}" bindtap="handleSwitchCallType" /> -->
+      <image class="necall-hangup-btn" src="{{hangupImg}}" bindtap="onHangup" />
+    </view>
+  </view>
+</view>

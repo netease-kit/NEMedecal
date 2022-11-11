@@ -1,0 +1,50 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "miniprogramRoot": "src/",
+  "compileType": "miniprogram",
+  "projectname": "medical-wx-demo",
+  "setting": {
+    "useCompilerPlugins": [
+      "typescript",
+      "less"
+    ],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "postcss": true,
+    "es6": true,
+    "enhance": true,
+    "minifyWXSS": true,
+    "minified": true,
+    "ignoreUploadUnusedFiles": true,
+    "packNpmManually": true,
+    "ignoreDevUnusedFiles": false,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./src"
+      }
+    ],
+    "coverView": false,
+    "showShadowRootInWxmlPanel": false
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {},
+  "srcMiniprogramRoot": "src/",
+  "appid": "wx5225b375b6a8004a",
+  "libVersion": "2.25.4",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "scripts": {
+    "beforeUpload": "yarn compile"
+  }
+}

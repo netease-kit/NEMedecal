@@ -1,0 +1,96 @@
+.content {
+  margin-top: 9px;
+  // width: 100%;
+  .section {
+    // width: 100%;
+    margin-top: 24px;
+    .title {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    .works {
+      padding: 24px 0;
+      // width: 100%;
+      background-color: #FFFFFF;
+      text-align: center;
+      .work-part {
+        display: inline-block;
+        width: 49%;
+        .num {
+          color: #23C2B6;
+          font-size: 32px;
+          // margin-bottom: 16px;
+        }
+        .num-intro {
+          color: #666666;
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+      .work-part:first-child {
+        border-right: 1px solid #EAEAEA;
+      }
+    }
+    .patients {
+      .patients-part {
+        padding: 22px 16px;
+        background-color: #FFFFFF;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          .photo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            margin-right: 14px;
+          }
+          .name {
+            font-size: 16px;
+            line-height: 18px;
+            margin-bottom: 8px;
+          }
+          .info {
+            display: flex;
+            view {
+              margin-right: 8px;
+            }
+          }
+        }
+        .right {
+          display: flex;
+          line-height: 1;
+          align-items: center;
+          .function {
+            margin-left: 16px;
+            image {
+              width: 36px;
+              height: 36px;
+            }
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .patients-part:nth-child(odd){
+        .gender, .age {
+          color: #23C2B6;
+          background-color: #EDFAFF;
+          border-radius: 2px;
+          padding: 0 5px;
+        }
+      }
+      .patients-part:nth-child(even){
+        .gender, .age {
+          color: #8843A9;
+          background-color: #F4F2FC;
+          border-radius: 2px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}

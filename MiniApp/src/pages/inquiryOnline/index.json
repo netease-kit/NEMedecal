@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "DoctorsUI": "../../components/doctorsUI"
+  }
+}

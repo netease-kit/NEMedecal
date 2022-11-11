@@ -1,0 +1,25 @@
+<!--pages/functionalExperience/voice-notice/index.wxml-->
+<view class="notice-page">
+  <view class="diagnose-phone-input">
+    <input
+      class="diagnose-phone__number"
+      type="number"
+      value="{{callNumber}}"
+      bindinput="handleMobileChange"
+      maxlength="11"
+      placeholder="请输入被通知的手机号" />
+    <mp-icon wx:if="{{callNumber}}" catchtap="clearPhoneNumber" class="diagnose-phone-input__delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+  </view>
+  <view class="diagnose-phone-input">
+    <input
+      class="diagnose-phone__number"
+      value="{{callContent}}"
+      bindinput="handleContentChange"
+      placeholder="请输入需通知的语音内容" />
+    <mp-icon wx:if="{{callContent}}" catchtap="clearCallContent" class="diagnose-phone-input__delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+  </view>
+  <view class="tips">
+    说明：此功能用于诊前通知场景，可自定义提前通知的时间（例如提前30分钟通知医患双方），提高接通率进而提高问诊的完成率。
+  </view>
+  <button class="diagnose-btn" bindtap="onSend">发送语音消息</button>
+</view>

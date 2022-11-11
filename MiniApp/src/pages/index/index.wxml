@@ -1,0 +1,15 @@
+<view class="login-view">
+  <!-- 封面 -->
+  <view wx:if="{{login_status===LOGIN_STATUS.UNLOGIN}}" class="front-view">
+    <image class="front-img" src="../../resources/images/frontispiece.png"></image>
+    <!-- <image class="front-img" src="@images/frontispiece.png"></image> -->
+    <view>
+      <text class="title">互联网医疗场景 Demo</text>
+    </view>
+    <button class="login-btn" bindtap="login">手机验证码登录</button>
+    <view class="footer">
+      <image class="logo" src="../../resources/images/logo.png"></image>
+    </view>
+  </view>
+</view>
+
