@@ -1,0 +1,26 @@
+<view class="switch-com">
+  <view>
+    <text wx:if="{{!onlyShowIcon}}" class="tag">当前体验：{{roleName}}</text>
+    <image class="icon" src="../../resources/images/switch.png" bindtap="switchRole"/>
+  </view>
+  <view wx:if="{{!onlyShowIcon}}" bindtap="handleShowTips">
+    <mp-icon icon="info" color="#333333" size="{{20}}"></mp-icon>
+  </view>
+  <mp-dialog
+    style="position: absolute;"
+    show="{{dialogShow}}"
+    buttons="{{buttons}}"
+    maskClosable="{{true}}" 
+    bindbuttontap="handleCloseDialog"
+    title="帮助说明"
+  >
+    <view class="switch-tips">
+      1.demo主要用于体验，融合了网易云信在互联网问诊场景的产品特性，包括注册登录、图文/语音/视频问诊、实名认证等流程；
+      <view class="mt10">2.源码开放，可联系云信商务经理获取，或点击“我的-申请试用”注册账号，商务经理将在1个工作日内联系您；</view>
+      <view class="mt10">完整的网易云信医疗解决方案，联系商务经理获取。</view>
+      <view class="color-red mt10">
+        注意：图文/语音/视频问诊流程体验，需2个账号，体验角色分别为医生和患者，否则无法通信
+      </view>
+    </view>
+  </mp-dialog>
+</view>

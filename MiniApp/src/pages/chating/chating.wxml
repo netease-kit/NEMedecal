@@ -1,0 +1,193 @@
+<view class='chating-wrapper' catchtap='chatingWrapperClick'>
+<!-- 视频全屏播放区 -->
+  <view wx:if="{{isVideoFullScreen}}" style='position:fixed;top:0;bottom:0;right:0;left:0;z-index:999;background-color:#000;'>
+    <video id="videoEle" src="{{videoSrc}}" bindended="videoEnded" show-fullscreen-btn="{false}" controls style='width:100%;height:100%;'></video>
+  </view>
+<!-- tip消息 -->
+  <!-- <view catchtap='stopEventPropagation'>
+    <input-modal wx:if="{{tipFlag}}" title="输入提醒" catch:inputModalClick="tipClickHandler">
+      <input placeholder='请输入文本' type='text' confirm-type='send' class='modal-input' bindinput='tipInputChange' bindconfirm='tipInputConfirm'></input>
+    </input-modal>
+  </view> -->
+  <!-- 历史消息 -->
+  <!-- <view wx:if="{{chatType === 'p2p'}}" class='chating-history' catchtap='lookMessage'>
+    <text class='chating-history-left'>历史消息</text>
+    <text class='chating-history-right'>></text>
+  </view> -->
+  <!-- 群信息 -->
+  <!-- <view wx:if="{{!currentGroup.isCurrentNotIn && chatType === 'advanced'}}" class='chating-history' catchtap='lookMessage'>
+    <text class='chating-history-left'>群信息</text>
+    <text class='chating-history-right'>></text>
+  </view> -->
+  <!-- 讨论组信息 -->
+  <!-- <view wx:if="{{!currentGroup.isCurrentNotIn && chatType === 'normal'}}" class='chating-history' catchtap='lookMessage'>
+    <text class='chating-history-left'>讨论组信息</text>
+    <text class='chating-history-right'>></text>
+  </view> -->
+  <!-- 消息记录 -->
+  <view class='record-wrapper' id="recordWrapper" style="{{replyMsg.idClient ? 'padding-bottom: 350rpx' : ''}}">
+    <view wx:for="{{messageArr}}" wx:for-item="message" wx:key="time" id="{{'p2p-' + message.idServer}}">
+      <view class='record-item-time-wrapper' wx:if="{{message.displayTimeHeader != ''}}">
+        <text class='record-item-time'>{{message.displayTimeHeader}}</text>
+      </view>
+      <view wx:if="{{message.sendOrReceive == 'send'}}" class='{{message.sendOrReceive == "send" ? "record-chatting-item self" : ""}}' style='justify-content: {{message.type === "tip" || message.type === "notification" ? "center" : "flex-end"}}' data-message="{{message}}" bindlongpress='showEditorMenu'>
+        <view wx:if="{{message.type === 'geo'}}" data-geo='{{message.geo}}' class='small-map-wrapper' catchtap='fullScreenMap'>
+          <image src="../../resources/images/chatroom/map.png" class='small-geo-img'></image>
+          <text class='text'>{{message.geo.title}}</text>
+        </view>
+        <view wx:if="{{message.type === 'video'}}" data-video="{{message.video}}" catchtap='requestFullScreenVideo' class='small-video-wrapper'>
+          <image src='../../resources/images/play.png' mode="aspectFit" class='image-play'></image>
+          <view style='color: #000;'>{{message.duration || 0}}''</view>
+        </view>
+        <view wx:if="{{message.type === 'audio'}}" class='audio-wrapper' data-audio="{{message.audio}}" catchtap='playAudio' style='background-color:#D6E5F6;color: #000;'>
+          <image src='{{iconBase64Map.iconVoiceWhite}}' class='image'></image>
+          <text class='text'>{{message.duration || 0}}''</text>
+        </view>
+        <image
+          wx:if="{{message.type === 'image'}}"
+          catchtap="handlePreviewImg"
+          data-nodes="{{message.nodes}}" 
+          mode="aspectFit"
+          webp="{{true}}"
+          lazy-load
+          class="msg-image"
+          src="{{message.nodes[0].attrs.src}}"
+          binderror="onImageError"
+          alt="聊天室图片" />
+        <!-- <rich-text wx:if="{{message.type === 'image'}}" data-nodes="{{message.nodes}}" bindtap="handlePreviewImg" class='record-chatting-item-text nobg' nodes="{{message.nodes}}"></rich-text> -->
+        <rich-text wx:if="{{message.type === '猜拳' || message.type === '贴图表情'}}" class='record-chatting-item-text nobg' nodes="{{message.nodes}}" ></rich-text>
+        <!-- 回复消息 -->
+        <view wx:if="{{message.type === 'text' || message.type === 'file' || message.type === '白板消息' || message.type === '阅后即焚' || message.type === 'robot' || message.type === 'custom'}}" class='record-chatting-item-text record-replayMsg-item-text'>
+          <view catchtap="handleReachToReaply" data-id="{{'p2p-' + message.replyMsgIdServer}}" class="color-gray" wx:if="{{message.type === 'text' && message.replyMsg}}"><text class="color-grayer">|</text> {{message.replyMsg.fromNick || ''}}：{{message.replyMsg.replayText}}</view>
+          <rich-text nodes="{{message.nodes}}"></rich-text>        
+        </view>
+        <rich-text wx:if="{{message.type === 'notification'}}" class='tip-rich-text' nodes="{{message.nodes}}"></rich-text>
+        <text bindtap="handleReEditMsg" data-msg="{{message.recallText}}" class='tip-rich-text tip-withdraw-text' wx:if="{{message.type === 'tip'}}">{{message.text}} <text style="color: #1861DF;">重新编辑 ></text></text>
+        <text wx:if="{{message.type !== 'tip' && message.type !== 'notification' && message.type !== 'image' && message.type !== 'video' && message.type !== 'geo' && message.type !== '猜拳' && message.type !== '贴图表情' }}" class='right-triangle'></text>
+        <image wx:if="{{message.type !== 'tip' && message.type !== 'notification'}}" src='{{loginAccountLogo}}' catchtap='switchToMyTab' class='record-chatting-item-img'></image>
+      </view>
+      <view wx:if="{{message.sendOrReceive == 'receive'}}" class='{{message.sendOrReceive == "receive" ? "record-chatting-item other" : ""}}' style='justify-content: {{message.type === "tip" || message.type === "notification" ? "center" : "flex-start"}}' data-message="{{message}}"  bindlongpress='showEditorMenu'>
+        <image wx:if="{{message.type !== 'tip' && message.type !== 'notification'}}" catchtap='switchPersonCard' data-account='{{message.from}}' src='{{fromAvatar || "../../resources/images/chatroom/default-icon.png"}}' class='record-chatting-item-img'></image>
+        <text wx:if="{{message.type !== 'tip' && message.type !== 'notification' && message.type !== 'image' && message.type !== 'video' && message.type !== 'geo' && message.type !== '猜拳' && message.type !== '贴图表情' }}" class='left-triangle'></text>
+        <view wx:if="{{message.type === 'geo'}}" data-geo='{{message.geo}}' class='small-map-wrapper' catchtap='fullScreenMap'>
+          <image src="../../resources/images/chatroom/map.png" class='small-geo-img'></image>
+          <text class='text'>{{message.geo.title}}</text>
+        </view>
+        <view wx:if="{{message.type === 'video'}}" data-video="{{message.video}}" catchtap='requestFullScreenVideo' class='small-video-wrapper'>
+          <image src='../../resources/images/play.png' mode="aspectFit" class='image-play'></image>
+          <view style='color: #000;'>{{message.duration || 0}}''</view>
+        </view>
+        <view wx:if="{{message.type === 'audio'}}" data-audio="{{message.audio}}" catchtap='playAudio' class='audio-wrapper'>
+          <image src='{{iconBase64Map.iconVoiceGrey}}' class='image'></image>
+          <text class='text' style='color:#000;'>{{message.duration || 0}}''</text>
+        </view>
+        <image
+          wx:if="{{message.type === 'image'}}"
+          catchtap="handlePreviewImg"
+          data-nodes="{{message.nodes}}" 
+          mode="aspectFit"
+          webp="{{true}}"
+          lazy-load
+          class="msg-image"
+          src="{{message.nodes[0].attrs.src}}"
+          binderror="onImageError"
+          alt="聊天室图片" />
+        <!-- <rich-text wx:if="{{message.type === 'image'}}" data-nodes="{{message.nodes}}" bindtap="handlePreviewImg" class='record-chatting-item-text nobg' nodes="{{message.nodes}}"></rich-text> -->
+        <rich-text wx:if="{{message.type === '猜拳' || message.type === '贴图表情'}}" class='record-chatting-item-text nobg' nodes="{{message.nodes}}"></rich-text>
+        <!-- 回复消息 -->
+        <view wx:if="{{message.type === 'text' || message.type === 'file' || message.type === '白板消息' || message.type === '阅后即焚' || message.type === 'robot' || message.type === 'custom'}}" class='record-chatting-item-text record-replayMsg-item-text-other'>
+          <view catchtap="handleReachToReaply" data-id="{{'p2p-' + message.replyMsgIdServer}}" class="color-gray" wx:if="{{message.type === 'text' && message.replyMsg}}"><text class="color-grayer">|</text> {{message.replyMsg.fromNick || ''}}：{{message.replyMsg.replayText}}</view>
+          <rich-text nodes="{{message.nodes}}"></rich-text>
+        </view>
+        <rich-text wx:if="{{message.type === 'tip' || message.type === 'notification'}}" class='tip-rich-text' nodes="{{message.nodes}}"></rich-text>
+      </view>
+    </view>
+  </view>
+  <view class="chatroom-bottom-wrapper">
+    <!-- 自定义按钮 -->
+    <view wx:if="{{role === 1}}" class="chatroom-custom-wrapper" style="{{replyMsg.idClient ? 'padding-bottom: 50px;' : ''}}">
+      <view class="chatroom-btn-message" bindtap="handleShowPatientInfo">患者信息</view>
+      <view class="chatroom-btn-message" bindtap="handleShowToast">历史就诊</view>
+      <view class="chatroom-btn-message" bindtap="handleShowToast">结束问诊</view>
+    </view>
+    <mp-dialog
+      show="{{dialogShow}}"
+      buttons="{{buttons}}"
+      maskClosable="{{true}}" 
+      bindbuttontap="handleCloseDialog"
+      title="患者信息"
+    >
+      <view class="patient-message">
+        基本信息：
+        <view class="patient-blod-text">{{fromNick || '李诞'}}</view>
+        <view class="patient-info">
+          <view class="patient-info-item">
+            <image class="my-icon-gender" src="../../resources/images/icon_male.png" />
+            <text class="color-primary">男</text>
+          </view>
+          <text class="patient-info-item">30岁</text>
+        </view>
+        病情描述：
+        <view class="patient-blod-text">头疼，持续大概1个月</view>
+        <view class="patient-sick-image-wrapper">
+          <image class="patient-sick-image" src="../../resources/images/patient-sick-1.png" />
+          <image class="patient-sick-image" src="../../resources/images/patient-sick-2.png" />
+          <image class="patient-sick-image" src="../../resources/images/patient-sick-3.png" />
+        </view>
+      </view>
+    </mp-dialog>
+    <!--底部输入框  -->
+    <view wx:if="{{chatType === 'p2p' || !currentGroup.isCurrentNotIn}}" class='chatinput-wrapper'  catchtap='stopEventPropagation'>
+      <!-- 回复的消息内容 -->
+      <view class="chat-replay-msg" wx:if="{{replyMsg.idClient}}">
+        <mp-icon catchtap="handleCancelReplay" style="padding: 5px;" icon="close" color="#999999" size="{{20}}"></mp-icon>
+        <text class="icon-vertical-line">|</text> 回复 {{replayNick}}：{{replyMsg.replayText}}</view>
+      <view class='chatinput-content'>
+        <image src='{{sendType == 0 ? "../../resources/images/chatroom/voice.png" : "../../resources/images/chatroom/keyboard.png"}}' class='chatinput-img' catchtap='switchSendType'></image>
+        <input style='margin-bottom: 20rpx;' adjust-position  wx:if="{{sendType == 0}}" value='{{inputValue}}' focus='{{focusFlag}}' bindinput='inputChange' bindfocus='inputFocus' bindblur='inputBlur' bindconfirm='inputSend' class='chatinput-input'  placeholder="输入文字" confirm-type='send'></input>
+        <!-- <button wx:if="{{sendType == 1}}" class="{{ isLongPress ? 'chatinput-voice-mask chatinput-voice-mask-hover' : 'chatinput-voice-mask' }}" hover-class="none" catchtouchstart='longPressStart' catchlongpress='voiceBtnLongTap' catchtouchend='longPressEnd'>按住说话</button> -->
+        <button wx:if="{{sendType == 1}}" class="{{ isLongPress ? 'chatinput-voice-mask chatinput-voice-mask-hover' : 'chatinput-voice-mask' }}" hover-class="none" catchtouchstart='longPressStart' catchtouchend='longPressEnd'>
+          {{isLongPress ? '松开结束' : '按住说话'}}
+        </button>
+        <image src='../../resources/images/chatroom/more.png' catchtap='toggleMore' class='chatinput-img fr'></image>
+        <image src='../../resources/images/chatroom/emoji.png' catchtap='toggleEmoji' class='chatinput-img fr emoji'></image>
+      </view>
+      <view wx:if="{{emojiFlag}}" class='chatinput-subcontent'>
+        <component-emoji bind:EmojiClick="emojiCLick" bind:EmojiSend="emojiSend"></component-emoji>
+      </view>
+      <view wx:if="{{moreFlag}}" class='more-subcontent'>
+        <view style='display:flex;'>
+          <view class='more-subcontent-item' catchtap='chooseImageToSend'>
+            <image src="../../resources/images/chatroom/photo.png" class='image'></image>
+            <text class='text'>相册</text>
+          </view>
+          <view class='more-subcontent-item' catchtap='chooseImageOrVideo'>
+            <image src="../../resources/images/chatroom/shoot.png" class='image'></image>
+            <text class='text'>拍摄</text>
+          </view>
+          <!-- <view class='more-subcontent-item'><view class='image'></view><text class='text'>文件</text></view> -->
+          <!-- <view class='more-subcontent-item' catchtap='showTipMessagePanel'>
+            <image src="../../resources/images/chatroom/tip.png" class='image'></image>
+            <text class='text'>Tip</text>
+          </view>
+          <view class='more-subcontent-item' catchtap='sendFingerGuess'>
+            <image src="../../resources/images/chatroom/morra.png" class='image'></image>
+            <text class='text'>猜拳</text>
+          </view> -->
+        </view>
+        <!-- <view style='display:flex;justify-content: space-between;'>
+          <view class='more-subcontent-item' catchtap='choosePosition'>
+            <image src="../../resources/images/chatroom/location.png" class='image'></image>
+            <text class='text'>位置</text>
+          </view>
+          <view class='more-subcontent-item' catchtap='videoCall'>
+            <image src="../../resources/images/chatroom/location.png" class='image'></image>
+            <text class='text'>视频通话</text>
+          </view>
+          <view class='more-subcontent-item'><view class='image' style='background-color: transparent;'></view><text class='text'></text></view>
+          <view class='more-subcontent-item'><view class='image' style='background-color: transparent;'></view><text class='text'></text></view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

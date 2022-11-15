@@ -1,0 +1,8 @@
+<!--pages/functionalExperience/certification/index.wxml-->
+<view class="certification-page">
+  <view class="certification-title">号码认证效果对比</view>
+  <view class="certification-subtitle">认证前</view>
+  <image class="certification-image" src="../../../resources/images/identification-before.png" mode="aspectFit"></image>
+  <view class="certification-subtitle">认证后</view>
+  <image class="certification-image" src="../../../resources/images/identification-after.png" mode="aspectFit"></image>
+</view>

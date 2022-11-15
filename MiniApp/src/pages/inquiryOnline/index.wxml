@@ -1,0 +1,9 @@
+<view class="gray-bg common-page">
+	<view class="btns">
+		<view class="btn {{currentId==='1' && 'btn-active'}}" bindtap="clickBtn" data-id="1">全部</view>
+		<view class="btn {{currentId==='2' && 'btn-active'}}" bindtap="clickBtn" data-id="2">呼吸内科</view>
+		<view class="btn {{currentId==='3' && 'btn-active'}}" bindtap="clickBtn" data-id="3">皮肤科</view>
+	</view>
+	<view class="doctor-header">专家名医</view>
+	<DoctorsUI ifShowStar="{{true}}"></DoctorsUI>
+</view>

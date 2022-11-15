@@ -1,0 +1,53 @@
+<view class="gray-bg common-page">
+  <SwitchRoleCom bind:hasSwitched="handleSwitched"></SwitchRoleCom>
+  <view class="content">
+    <view class="section">
+      <view class="title">今日工作</view>
+      <view class="works">
+        <view class="work-part">
+          <view class="num">{{ patientList.length || 0}}</view>
+          <view class="num-intro">待确诊</view>
+        </view>
+        <view class="work-part">
+          <text class="num">25</text>
+          <view class="num-intro">已接诊</view>
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="title">待接诊患者</view>
+      <view class="patients">
+        <block
+          wx:for="{{patientList}}"
+          wx:key="id"
+          wx:for-index="index"
+          data-index="{{item.id}}"
+        >
+          <view class="patients-part">
+            <view class="left">
+              <image class="photo" src="../../../resources/images/{{item.photo}}.png"/>
+              <view>
+                <view class="name">{{item.name}}</view>
+                <view class="info">
+                  <view class="gender">{{item.gender === "男" ? "♂" : "♀"}} {{item.gender}}</view>
+                  <view class="age">{{item.age}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="right">
+              <view class="function" data-type="message" bindtap="handleToDiagnose">
+                <image src="../../../resources/images/message_yellow.png"/>
+              </view>
+              <view class="function" data-type="audio" bindtap="handleToDiagnose">
+                <image src="../../../resources/images/audio_green.png"/>
+              </view>
+              <view class="function" data-type="video" bindtap="handleToDiagnose">
+                <image src="../../../resources/images/video_blue.png"/>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

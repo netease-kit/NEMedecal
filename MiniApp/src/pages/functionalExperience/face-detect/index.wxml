@@ -1,0 +1,15 @@
+<view class="face-detect-page">
+  <view wx:if="{{isDetected}}" class="face-detect-success">
+    <image class="icon-success" src="../../../resources/images/icon_success.png" mode="aspectFit"></image>
+    <view class="color-dark fz16">认证成功</view>
+    <view class="detect-text">将在 <text class="color-blue">{{count}}</text> 秒后跳转</view>
+    <button class="detect-btn" bindtap="handleNavgateTo">立即跳转</button>
+  </view>
+  <view wx:else>
+    <image class="camera-line-border" src="../../../resources/images/square-border.png" mode="aspectFit"></image>
+    <view class="camera-wrapper">
+      <camera device-position="front" flash="off" binderror="handleCameraError" class="pusher" bindinitdone="handleCameraDone"></camera>
+    </view>
+    <view class="color-gray">请对准手机并保持光线充足</view>
+  </view>
+</view>

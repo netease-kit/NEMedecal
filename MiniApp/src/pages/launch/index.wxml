@@ -1,0 +1,6 @@
+<!--pages/launch/index.wxml-->
+<view class="launch-page">
+  <image class="launch-image" src="../../resources/images/launch.png" mode="aspectFit" />
+  <view class="launch-title">云信互联网医疗场景</view>
+</view>
+

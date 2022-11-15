@@ -1,0 +1,40 @@
+<view class='recentchat-wrapper'>
+  <view wx:if="{{chatList.length == 0}}" class='no-recent'>
+    <image src="../../../resources/images/empty-message.png" class='no-recent-image'></image>
+    <text class='no-recent-text'>暂无消息</text>
+  </view>
+  <!-- <view catchtap='catchDeleteNotification'>
+    <swipe-delete>
+      <view wx:if="{{latestNotification.length !== 0}}" catchtap='switchToMessageNotification' class='recentchat-item' hover-class='recentchat-item-hover'>
+        <image src='/images/notice.png' class='recentchat-item-img'></image>
+        <view class='recentchat-item-right'>
+          <text class='recentchat-item-message'>{{latestNotification}}</text>
+        </view>
+      </view>
+    </swipe-delete>
+  </view> -->
+  <view wx:if="{{chatList.length != 0}}" wx:for="{{chatList}}" wx:for-item="message" wx:key="time">
+    <swipe-delete binddeleteChatItem="catchDeleteTap" data-account='{{message.account}}' data-session='{{message.session}}'>
+      <view wx:if="{{message.account !== '消息通知'}}" class='recentchat-item' hover-class='recentchat-item-hover'>
+        <image wx:if="{{message.account == userInfo.account}}" src='../../../resources/images/chatroom/computer.png' class='recentchat-item-img' data-account='{{message.account}}' ></image>
+        <image wx:if="{{message.chatType == 'p2p' && message.account != userInfo.account}}" src='{{message.avatar || "../../../resources/images/chatroom/default-icon.png"}}' class='recentchat-item-img' data-account='{{message.account}}'
+        data-session='{{message.session}}' catchtap='switchToChating'></image>
+        <image wx:if="{{message.chatType == 'advanced'}}" src='../../../resources/images/chatroom/advanced.png' class='recentchat-item-img' data-account='{{message.account}}'></image>
+        <image wx:if="{{message.chatType == 'normal'}}" src='../../../resources/images/chatroom/normal.png' class='recentchat-item-img' data-account='{{message.account}}'></image>
+        <view class='recentchat-item-right' data-account='{{message.account}}' data-session='{{message.session}}' catchtap='switchToChating'>
+          <view class='recentchat-item-top'>
+            <text wx:if="{{message.account != userInfo.account}}" class='recentchat-item-title'>{{message.nick || message.account}}</text>
+            <text wx:if="{{message.account == userInfo.account}}" class='recentchat-item-title'>我的电脑</text>
+            <text class='recentchat-item-time'>{{message.displayTime}}</text>
+          </view>
+          <view class='recentchat-item-bottom'>
+            <view style='display:flex;align-items:center;'>
+              <text class='recentchat-item-desc'>{{message.lastestMsg}}</text>
+            </view>
+            <view wx:if="{{message.unread}}" class='recentchat-item-unread'>{{message.unread > 99 ? '99+' : (message.unread || '')}}</view>
+          </view>
+        </view>
+      </view>
+    </swipe-delete>
+  </view>
+</view>

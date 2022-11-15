@@ -1,0 +1,21 @@
+<!--pages/setting/index.wxml-->
+<view class="setting-page">
+  <view class="tc">
+    <image class="yx-logo" mode="aspectFit" src="../../resources/images/icon_yx_logo.png" />
+    <image class="yx-text" mode="aspectFit" src="../../resources/images/icon_yx_text.png" />
+  </view>
+  <view class="my-btn-wrapper">
+    <view class="my-btn-item" bindtap="handleToAgreement">
+      <view class="my-item-flex">用户协议</view>
+      <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+    </view>
+    <view class="my-btn-item" bindtap="handleToPrivacy">
+      <view class="my-item-flex">隐私政策</view>
+      <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+    </view>
+    <view class="my-btn-item">
+      <view class="my-item-flex">demo版本</view>
+      <text class="color-gray">V1.0.0</text>
+    </view>
+  </view>
+</view>

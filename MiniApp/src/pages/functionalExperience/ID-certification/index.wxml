@@ -1,0 +1,28 @@
+<!--pages/functionalExperience/certification/index.wxml-->
+<view class="certification-page">
+  <view class="certification-title">输入以下信息，完成实名认证</view>
+  <view class="diagnose-phone-input">
+    <input
+      class="diagnose-phone__number"
+      value="{{name}}"
+      maxlength="10"
+      bindinput="handleNameChange"
+      placeholder="请输入姓名" />
+    <mp-icon wx:if="{{name}}" catchtap="clearName" class="diagnose-phone-input__delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+  </view>
+  <view class="diagnose-phone-input">
+    <input
+      class="diagnose-phone__number"
+      type="number"
+      value="{{IDNumber}}"
+      bindinput="handleIDChange"
+      maxlength="18"
+      placeholder="请输入身份证号码" />
+    <mp-icon wx:if="{{IDNumber}}" catchtap="clearIDContent" class="diagnose-phone-input__delete" type="field" icon="close2" color="#B3B7BC" size="{{20}}"></mp-icon>
+  </view>
+  <view class="tips">
+    说明：实名认证功能仅用于体验流程，不实际调用认证能力，有需求可 <text bindtap="handleToRegist" class="color-primary">申请试用</text>
+  </view>
+  <button class="diagnose-btn" bindtap="onSend">提交</button>
+</view>
+

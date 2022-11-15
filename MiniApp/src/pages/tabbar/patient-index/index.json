@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SwitchRoleCom": "../../../components/switchRole",
+    "DoctorsUI": "../../../components/doctorsUI"
+  },
+  "navigationBarBackgroundColor": "#EFF1F4"
+}

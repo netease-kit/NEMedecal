@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SwitchRoleCom": "../../../components/switchRole"
+  },
+  "navigationBarBackgroundColor": "#EFF1F4"
+}

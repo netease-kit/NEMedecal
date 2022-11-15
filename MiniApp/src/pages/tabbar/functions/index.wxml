@@ -1,0 +1,27 @@
+<!--pages/functions/index.wxml-->
+<view class="functions-page gray-bg">
+  <view class="functions-title">高接通体验</view>
+  <view class="functions-flex-wrapper">
+    <view class="functions-item" data-key="voice-notification" bindtap="handleClick">
+      <image class="functions-icon" data-key="voice-notification" mode="aspectFill" src="../../../resources/images/icon_audio.png"></image>语音通知
+    </view>
+    <view class="functions-item" data-key="app-alive" bindtap="handleClick">
+      <image class="functions-icon" data-key="app-alive" mode="aspectFill" src="../../../resources/images/icon_app.png"></image>应用保活
+    </view>
+  </view>
+  <view class="functions-flex-wrapper">
+    <view class="functions-item" data-key="phone-identification" bindtap="handleClick">
+      <image class="functions-icon" data-key="phone-identification" mode="aspectFill" src="../../../resources/images/icon_phone_book.png"></image>号码认证
+    </view>
+    <view class="functions-empty-item"></view>
+  </view>
+  <view class="functions-title">其他功能体验</view>
+  <view class="functions-flex-wrapper">
+    <view class="functions-item" data-key="ID-certification" bindtap="handleClick">
+      <image class="functions-icon" data-key="ID-certification" mode="aspectFill" src="../../../resources/images/icon_card.png"></image>实名认证
+    </view>
+    <view class="functions-item" data-key="virtual-bg" bindtap="handleClick">
+      <image class="functions-icon" data-key="virtual-bg" mode="aspectFill" src="../../../resources/images/icon_virtual.png"></image>虚拟背景
+    </view>
+  </view>
+</view>

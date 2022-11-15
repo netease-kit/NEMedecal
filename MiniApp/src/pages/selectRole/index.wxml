@@ -1,0 +1,16 @@
+<view>
+  <view class="role-view">
+    <view class="role-part {{currentRole === ROLE_TYPE.DOCTOR && 'role-part-active'}}" bindtap="selectRole" data-role="{{ROLE_TYPE.DOCTOR}}">
+      <image class="icon" src="../../resources/images/doctor.png"></image>
+      <view>医生</view>
+    </view>
+    <view class="role-part {{currentRole === ROLE_TYPE.PATIENT && 'role-part-active'}}" bindtap="selectRole" data-role="{{ROLE_TYPE.PATIENT}}">
+      <image class="icon" src="../../resources/images/patient.png"></image>
+      <view>患者</view>
+    </view>
+  </view>
+  <view class="role-confirm">
+    <button class="button" bindtap="confirmRole">确认</button>
+    <view class="hint">体验过程中可随时切换体验角色</view>
+  </view>
+</view>

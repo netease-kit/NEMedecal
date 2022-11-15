@@ -1,0 +1,33 @@
+<view>
+  <block
+    wx:for="{{doctorList}}"
+    wx:key="id"
+    wx-for-index="index"
+    data-index="{{item.id}}"
+  >
+    <view class="doctor-card" bindtap="turnToDoctorHomepage" data-id="{{item.id}}">
+      <view class="left">
+        <image class="photo" src="../../resources/images/{{item.photo}}"/>
+      </view>
+      <view class="content">
+        <view>
+          <text class="name">{{item.name}}</text>
+          <text class="level">{{item.level}}</text>
+          <image wx:if="{{ifSgowStar}}" class="stars" src="../../resources/images/{{item.feedbackStar}}"/>
+        </view>
+        <view class="unit">{{item.unit}}</view>
+        <view class="data-part">
+          <view class="half-part">
+            <text class="label">近7日接诊</text>
+            <text class="num">{{item.cureNum}}</text>
+          </view>
+          <view class="half-part">
+            <text class="label">好评率</text>
+            <text class="num">{{item.feedbackPer}}</text>
+          </view>
+        </view>
+        <view class="detail">{{item.strongAt}}</view>
+      </view>
+    </view>
+  </block>
+</view>

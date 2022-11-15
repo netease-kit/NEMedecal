@@ -1,0 +1,71 @@
+<!--pages/my/index.wxml-->
+<view class="my-page">
+  <view class="my-info">
+    <image class="my-avatar" src="{{userInfo.avatar}}" mode="aspectFill"></image>
+    <view class="my-info-content">
+      <view class="my-name">{{userInfo.nickname || '李'}}</view>
+      <view wx:if="{{userInfo.role === 1}}" class="my-job">呼吸科 主任医师</view>
+      <view wx:else class="patient-info">
+        <view wx:if="{{userInfo.gender === 'male'}}" class="info-item-wrapper">
+          <image class="my-icon-gender" src="../../../resources/images/icon_male.png" />
+          <text class="color-primary">男</text>
+        </view>
+        <view wx:else class="info-item-wrapper">
+          <image class="my-icon-gender" src="../../../resources/images/icon_female.png" />
+          <text class="color-primary">女</text>
+        </view>
+        <text class="info-item-wrapper">30岁</text>
+      </view>
+    </view>
+    <SwitchRoleCom class="my-switch-role" onlyShowIcon bind:hasSwitched="handleSwitched"></SwitchRoleCom>
+  </view>
+  <view class="my-btn-wrapper">
+    <block wx:if="{{role === 1}}">
+      <view class="my-btn-item" data-key="patient" bindtap="handleClick">
+        <view class="my-item-flex">
+          <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-patient.png"></image>
+          <text>我的患者</text>
+        </view>
+        <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+      </view>
+      <view class="my-btn-item" data-key="class" bindtap="handleClick">
+        <view class="my-item-flex">
+          <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-class.png"></image>
+          <text>我的排班</text>
+        </view>
+        <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="my-btn-item" data-key="doctor" bindtap="handleClick">
+        <view class="my-item-flex">
+          <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-doctor.png"></image>
+          <text>我的医生</text>
+        </view>
+        <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+      </view>
+      <view class="my-btn-item" data-key="record" bindtap="handleClick">
+        <view class="my-item-flex">
+          <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-record.png"></image>
+          <text>问诊记录</text>
+        </view>
+        <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+      </view>
+    </block>
+    <view class="my-btn-item" data-key="test" bindtap="handleClick">
+      <view class="my-item-flex">
+        <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-stamp.png"></image>
+        <text>申请免费试用</text>
+      </view>
+      <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+    </view>
+    <view class="my-btn-item" data-key="setting" bindtap="handleClick">
+      <view class="my-item-flex">
+        <image class="my-btn-icon" mode="aspectFill" src="../../../resources/images/my-setting.png"></image>
+        <text>通用设置</text>
+      </view>
+      <mp-icon icon="arrow" color="#999999" size="{{14}}"></mp-icon>
+    </view>
+  </view>
+</view>
+<button class="btn-logout" bindtap="onLogout">退出登录</button>

@@ -1,0 +1,87 @@
+/* pages/diagnose/diagnose.wxss */
+page {
+  background-color: #F3F5F8;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mt16 {
+  margin-top: 16px;
+}
+.text-gray {
+  color: #999;
+}
+.diagnose-page {
+  padding: 30px 16px;
+}
+.diagnose-header {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.diagnose-phone {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  &-input {
+    position: relative;
+    border: 1px solid #EFEFEF;
+  }
+  &-input__delete {
+    position: absolute;
+    right: 11px;
+    top: 8px;
+    padding: 4px;
+    z-index: 2;
+  }
+  &__number {
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 16px;
+    margin-right: 50px;
+  }
+  &__number-item {
+    position: relative;
+    display: inline-block;
+    background: #F7F7FA;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-right: 18px;
+  }
+  &__number-item:last-child {
+    margin-right: 0 !important;
+  }
+  &__number-delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+}
+.diagnose-call {
+  background-color: #fff;
+  padding: 0 16px;
+  margin-top: 8px;
+  border-radius: 4px;
+  &-switch-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    line-height: 30px;
+    border-bottom: 1px solid #F5F8FC;
+  }
+}
+.diagnose-btn {
+  background-color: #2ADBCE;
+  color: #fff;
+  width: 100% !important;
+  padding: 16px;
+  line-height: 1;
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+.phone-error-text {
+  color: #FF3030;
+  font-size: 14px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,5 @@
+<!--pages/call/index.wxml-->
+<view>
+  <NECallKitUI options="{{localOptions}}"/>
+</view>
+

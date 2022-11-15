@@ -1,0 +1,19 @@
+<view class="gray-bg common-page">
+  <SwitchRoleCom bind:hasSwitched="handleSwitched"></SwitchRoleCom>
+  <view class="inquiry-page">
+    <view class="top">
+      <view class="card" bindtap="inquiryOnline">
+        <image class="icon" src="../../../resources/images/online_inquiry.png"/>
+        <view>在线问诊</view>
+      </view>
+      <view class="card" bindtap="makeAppointment">
+        <image class="icon" src="../../../resources/images/booking_register.png"/>
+        <view>预约挂号</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="title">专家名医</view>
+      <DoctorsUI></DoctorsUI>
+    </view>
+  </view>
+</view>
